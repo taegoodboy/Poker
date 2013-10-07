@@ -1,2 +1,68 @@
 print "Hello Poker"
-print 'test'
+FP = ['2C','3C','4C','5C','6C']
+SP = ['9S','9C','9D','9H','KS']
+hands =[FP,SP]
+
+def poker(hands):
+    """
+   ([hand, hand, ...])-> hands
+ 
+   Return the best hand from list of hands
+   >>> sf = ['JC', 'TC', '9C', '8C', '7C']
+   >>> fk = ['5S', '5H', '5D', '5C', 'KS']
+   >>> sf2 = ['JS', 'TS', '9S', '8S', '7S']
+   >>> poker([sf, sf2])
+   [['JC', 'TC', '9C', '8C', '7C'], ['JS', 'TS', '9S', '8S', '7S']]
+   >>> poker([sf, fk])
+   [['JC', 'TC', '9C', '8C', '7C']]
+   >>> fh = ['5S', '5H', '5D', '8C', '8S']
+   >>> poker([fh, fk])
+   [['5S', '5H', '5D', '5C', 'KS']]
+   """
+    return allmax(hands)
+
+def allmax(hands):
+    winhand = max(hands, key=hand_rank)
+    maxval = hand_rank(winhand)
+    return [hand for hand in hands if hand_rank(hand)==maxval]
+    
+##    result = []
+##    for hand in hands:
+##        if hand_rank(hand) == maxval:
+##            result.append(hand)
+##    return result
+
+def hand_rank(hand):
+    """
+    (hand)-> int
+
+    Return the hand rank of a hand
+    >>> sf = ['JC', 'TC', '9C', '8C', '7C']
+    >>> hand_rank(sf)
+    (8, 11)
+    >>> fk = ['5S', '5H', '5D', '5C', 'KS']
+    >>> hand_rank(fk)
+    (7, 5)
+    >>> fh = ['5S', '5H', '5D', '8C', '8S']
+    >>> hand_rank(fh)
+    (6, 5)
+    """
+    ranks = ['--23456789TJQKA'.index(r) for r,s in hand]
+    ranks.sort(reverse=True)
+    
+    if ranks == [14,5,4,3,2]:
+        ranks = [5,4,3,2,1]
+        
+    if straight_flush(hand):
+        return 8, max(ranks)
+    elif kind(4, ranks):
+        return 7, kind(4, ranks)
+    elif fullhouse(ranks):
+        return 6, kind(3, ranks)
+
+
+
+print poker(hands)
+
+import doctest
+doctest.testmod()
