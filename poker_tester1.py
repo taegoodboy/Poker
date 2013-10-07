@@ -50,6 +50,17 @@ class Testpoker(unittest.TestCase):
         actual = poker.straight(['JC','TC','9C','8C','7C'])
         expected = True
         self.assertEqual (actual,expected)
+
+    def test_poker_tester_4(self):
+        '''testcase poker4
+        sf = ['JC', 'TC', '9C', '8C', '7C']
+        sf2 = ['JS', 'TS', '9S', '8S', '7S']
+        '''
+        sf = ['JC','TC','9C','8C','7C']
+        sf2 = ['JS', 'TS','9S','8S','7S']
+        actual = poker.poker ([sf,sf2])
+        expected = ['JS', 'TS','9S','8S','7S']
+        self.assertEqual (actual,expected)
    
 if __name__ == '__main__':
     unittest.main(exit=False)
