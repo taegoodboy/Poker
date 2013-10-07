@@ -1,4 +1,4 @@
-FP = ['2C','3C','4C','5C','6C']
+FP = ['5S', '5H', '5D', '8C', '8S']
 SP = ['9S','9C','9D','9H','KS']
 hands =[FP,SP]
 
@@ -137,6 +137,26 @@ def kind(n, ranks):
         if ranks.count(r) == n:
             return r
     return 0
+
+def fullhouse(ranks):
+    """
+    (ranks)-> Bool
+
+    Return True if hand is fullhouse,
+    false otherwise
+
+    >>> sf_ranks = [11, 10, 9, 8, 7]
+    >>> fullhouse(sf_ranks)
+    False
+    >>> fk_ranks = [5, 5, 5, 5, 13]
+    >>> fullhouse(fk_ranks)
+    False
+    >>> fh_ranks = [5, 5, 5, 8, 8]
+    >>> fullhouse(fh_ranks)
+    True
+    """
+    
+    return True if kind(3, ranks) and kind(2, ranks) else False
 
 print poker(hands)
 
