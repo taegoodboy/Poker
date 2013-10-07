@@ -11,14 +11,46 @@ class Testpoker(unittest.TestCase):
 
     def test_poker_tester_1(self):
         '''testcase poker1
-        sf = ['TS','9S','8S','7S','6S']
-        fk = ['9S','9C','9D','9H','KS']
+        sf = ['JC', 'TC', '9C', '8C', '7C']
+        fk = ['5S', '5H', '5D', '5C', 'KS']
         '''
-        sf = ['TS','9S','8S','7S','5S']
-        fk = ['9S','9C','9D','9H','KS']
+        sf = ['JC', 'TC', '9C', '8C', '7C']
+        fk = ['5S', '5H', '5D', '5C', 'KS']
         actual = poker.poker([sf,fk])
-        expected = ['TS','9S','8S','7S','6S']
+        expected = [['JC', 'TC', '9C', '8C', '7C']]
         self.assertEqual (actual,expected)
         
+    def test_poker_tester_2(self):
+        '''testcase poker2
+        sf = ['AC', '2C', '3C', '4C', '5C']
+        fk = ['5S', '5H', '5D', '5C', 'KS']
+        ''' 
+        sf = ['AC', '2C', '3C', '4C', '5C']
+        fk = ['5S', '5H', '5D', '5C', 'KS']
+        actual = poker.flush([sf,fk])
+        expected = False
+        self.assertEqual (actual,expected)
+        
+    def test_poker_tester_3(self):
+        '''testcase poker3
+        sf = ['2C','3C','4C','5C','6C']
+        fk = ['9S','9C','9D','9H','KS']
+        '''
+        sf = ['2C','3C','4C','5C','6C']
+        fk = ['9S','9C','9D','9H','KS']
+        actual = poker.poker([sf,fk])
+        expected = [['2C','3C','4C','5C','6C']]
+        self.assertEqual (actual,expected)
+
+    def test_poker_straight(self):
+        '''testcase poker
+        sf = ['JC','TC','9C','8C','7C']
+        fk = ['4S','4D','4C','4H','AD']
+        '''
+        actual = poker.straight(['JC','TC','9C','8C','7C'])
+        expected = True
+        self.assertEqual (actual,expected)
+   
 if __name__ == '__main__':
     unittest.main(exit=False)
+
