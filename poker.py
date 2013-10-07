@@ -54,6 +54,8 @@ def hand_rank(hand):
         
     if straight_flush(hand):
         return 8, max(ranks)
+    elif kind(4, ranks):
+        return 7, kind(4, ranks)
    
 
 def straight_flush(hand):
@@ -109,6 +111,32 @@ def flush(hand):
     suits = [s for r,s in hand]
 
     return len(set(suits)) == 1
+
+def kind(n, ranks):
+    """
+    (ranks)-> int
+
+    Return rank if hand is n kind,
+    false otherwise
+
+    >>> sf_ranks = [11, 10, 9, 8, 7]
+    >>> kind(4, sf_ranks)
+    0
+    >>> fk_ranks = [5, 5, 5, 5, 13]
+    >>> kind(4, fk_ranks)
+    5
+    >>> fh_ranks = [5, 5, 5, 8, 8]
+    >>> kind(3, fh_ranks)
+    5
+    >>> op_ranks = [5, 3, 9, 8, 8]
+    >>> kind(2, op_ranks)
+    8
+    """
+    
+    for r in ranks:
+        if ranks.count(r) == n:
+            return r
+    return 0
 
 print poker(hands)
 
