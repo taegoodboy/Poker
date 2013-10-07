@@ -1,4 +1,3 @@
-print "Hello Poker"
 FP = ['2C','3C','4C','5C','6C']
 SP = ['9S','9C','9D','9H','KS']
 hands =[FP,SP]
