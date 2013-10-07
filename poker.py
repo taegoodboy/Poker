@@ -1,5 +1,4 @@
 print "Hello Poker"
-<<<<<<< HEAD
 FP = ['2C','3C','4C','5C','6C']
 SP = ['9S','9C','9D','9H','KS']
 hands =[FP,SP]
@@ -56,15 +55,62 @@ def hand_rank(hand):
         
     if straight_flush(hand):
         return 8, max(ranks)
-    elif kind(4, ranks):
-        return 7, kind(4, ranks)
-    elif fullhouse(ranks):
-        return 6, kind(3, ranks)
+   
 
+def straight_flush(hand):
+    """
+    (hand)-> Bool
 
+    Return True if hand is straight_flush,
+    False otherwise
+
+    >>> sf = ['JC', 'TC', '9C', '8C', '7C']
+    >>> straight_flush(sf)
+    True
+    >>> fk = ['7S', '5H', '5D', '5C', '5S']
+    >>> straight_flush(fk)
+    False
+    """
+    return straight(hand) and flush(hand)
+
+def straight(hand):
+    """
+    (hand)-> Bool
+
+    Return True if hand is straight,
+    False otherwise
+
+    >>> sf = ['JC', 'TC', '9C', '8C', '7C']
+    >>> straight(sf)
+    True
+    >>> fk = ['4S','4D','4C','4H','AD']
+    >>> straight (fk)
+    False
+    """
+    ranks = ['--23456789TJQKA'.index(r) for r,s in hand]
+    ranks.sort(reverse=True)
+    if ranks == [14,5,4,3,2]:
+        ranks = [5,4,3,2,1]
+    return max(ranks)-min(ranks) == 4 and len(set(ranks)) == 5    
+
+def flush(hand):
+    """
+    (hand)-> Bool
+
+    Return True if hand is flush, False otherwise.
+
+    >>> sf = ['JC', 'TC', '9C', '8C', '7C']
+    >>> flush(sf)
+    True
+    >>> fk = ['5S', '5H', '5D', '5C', 'KS']
+    >>> flush(fk)
+    False
+    """
+
+    suits = [s for r,s in hand]
+
+    return len(set(suits)) == 1
 
 print poker(hands)
 
-import doctest
-doctest.testmod()
 
