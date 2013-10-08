@@ -93,6 +93,33 @@ class Testpoker(unittest.TestCase):
         actual = poker.hand_rank(sf)[0]
         expected = 8
         self.assertEqual (actual,expected)
+
+    def test_hand_rank_tester_4(self):
+        '''testcase hand_rank normal four_of_a_kind 
+        fk = ['5S', '5H', '5D', '5C', 'KS']
+        '''
+        fk = ['5S', '5H', '5D', '5C', 'KS']
+        actual = poker.hand_rank(fk)[0]
+        expected = 7
+        self.assertEqual (actual,expected)
+
+    def test_hand_rank_tester_5(self):
+        '''testcase hand_rank highest four_of_a_kind 
+        fk = ['AS','AC','AD','AH','KS']
+        '''
+        fk = ['AS','AC','AD','AH','KS']
+        actual = poker.hand_rank(fk)[0]
+        expected = 7
+        self.assertEqual (actual,expected)
+
+    def test_hand_rank_tester_6(self):
+        '''testcase hand_rank lowest four_of_a_kind 
+        fk = ['2S','2C','2D','2H','3S']
+        '''
+        fk = ['2S','2C','2D','2H','3S']
+        actual = poker.hand_rank(fk)[0]
+        expected = 7
+        self.assertEqual (actual,expected)
    
 if __name__ == '__main__':
     unittest.main(exit=False)
