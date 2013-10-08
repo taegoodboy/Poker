@@ -1,5 +1,5 @@
-FP = ['JC','TC','9C','8C','7C']
-SP = ['KS', 'QS', 'JS', 'TS', '9S']
+FP = ['5S', '5H', '5D', '8C', '8S']
+SP = ['JC', 'TC', '9C', '8S', '7C']
 hands =[FP,SP]
 
 def poker(hands):
@@ -7,23 +7,26 @@ def poker(hands):
    ([hand, hand, ...])-> hands
  
    Return the best hand from list of hands
-   >>> sf = ['JC', 'TC', '9C', '8C', '7C']
-   >>> fk = ['5S', '5H', '5D', '5C', 'KS']
-   >>> sf2 = ['JS', 'TS', '9S', '8S', '7S']
-   >>> poker([sf, sf2])
-   [['JC', 'TC', '9C', '8C', '7C'], ['JS', 'TS', '9S', '8S', '7S']]
-   >>> poker([sf, fk])
-   [['JC', 'TC', '9C', '8C', '7C']]
-   >>> fh = ['5S', '5H', '5D', '8C', '8S']
-   >>> poker([fh, fk])
-   [['5S', '5H', '5D', '5C', 'KS']]
+    >>> sf = ['JC', 'TC', '9C', '8C', '7C']
+    >>> fk = ['5S', '5H', '5D', '5C', 'KS']
+    >>> sf2 = ['JS', 'TS', '9S', '8S', '7S']
+    >>> poker([sf, sf2])
+    [['JC', 'TC', '9C', '8C', '7C'], ['JS', 'TS', '9S', '8S', '7S']]
+    >>> poker([sf, fk])
+    [['JC', 'TC', '9C', '8C', '7C']]
+    >>> fh = ['5S', '5H', '5D', '8C', '8S']
+    >>> poker([fh, fk])
+    [['5S', '5H', '5D', '5C', 'KS']]
+    >>> s1 = ['JC', 'TC', '9C', '8S', '7C']
+    >>> poker([fh, s1])
+    [['5S', '5H', '5D', '8C', '8S']]
    """
     return allmax(hands)
 
 def allmax(hands):
     winhand = max(hands, key=hand_rank)
     # for StraightFlush that 
-    # same hand_rank 
+    # same hand_rank
     if hand_rank(hands[0])==hand_rank(hands[1]):
         # same high card
         if hand_rank(hands[0])[1]==hand_rank(hands[1])[1]:
@@ -68,6 +71,8 @@ def hand_rank(hand):
         return 8, max(ranks)
     elif kind(4, ranks):
         return 7, kind(4, ranks)
+    elif fullhouse(ranks):
+         return 6, kind(3, ranks)
    
 
 def straight_flush(hand):
