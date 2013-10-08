@@ -6,11 +6,11 @@ class Testpoker(unittest.TestCase):
     
     #kind of card ==> sf = straight flush > fk = four of a kind > fh = full house >
     #fl = flush > st = straight > tk = three of a kind > tp = two pair > op = one pair > hc = high card
-    #type of card ==> S = spear card > H = heart card > D = diamond card > C = clover card
+    #type of card ==> S = spades card > H = heart card > D = diamond card > C = club card
     #value of card ==> A = 14 > K = 13 > Q = 12 > J = 11 > T = 10 > 9...2 > A = 1
 
     def test_poker_tester_1(self):
-        '''testcase poker1
+        '''testcase poker1 normal poker
         sf = ['JC', 'TC', '9C', '8C', '7C']
         fk = ['5S', '5H', '5D', '5C', 'KS']
         '''
@@ -21,18 +21,21 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
         
     def test_poker_tester_2(self):
-        '''testcase poker2
+        '''testcase poker2 normal flush
         sf = ['AC', '2C', '3C', '4C', '5C']
         fk = ['5S', '5H', '5D', '5C', 'KS']
         ''' 
         sf = ['AC', '2C', '3C', '4C', '5C']
         fk = ['5S', '5H', '5D', '5C', 'KS']
-        actual = poker.flush([sf,fk])
-        expected = False
-        self.assertEqual (actual,expected)
+        actual1 = poker.flush(sf)
+        actual2 = poker.flush(fk)
+        expected1 = True
+        expected2 = False
+        self.assertEqual (actual1,expected1)
+        self.assertEqual (actual2,expected2)
         
     def test_poker_tester_3(self):
-        '''testcase poker3
+        '''testcase poker3 normal
         sf = ['2C','3C','4C','5C','6C']
         fk = ['9S','9C','9D','9H','KS']
         '''
@@ -43,7 +46,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_poker_straight(self):
-        '''testcase poker
+        '''testcase poker normal
         sf = ['JC','TC','9C','8C','7C']
         fk = ['4S','4D','4C','4H','AD']
         '''
@@ -52,14 +55,14 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_poker_tester_4(self):
-        '''testcase poker4
+        '''testcase poker4 same rank
         sf = ['JC', 'TC', '9C', '8C', '7C']
         sf2 = ['JS', 'TS', '9S', '8S', '7S']
         '''
         sf = ['JC','TC','9C','8C','7C']
         sf2 = ['JS', 'TS','9S','8S','7S']
         actual = poker.poker ([sf,sf2])
-        expected = ['JS', 'TS','9S','8S','7S']
+        expected = [['JS', 'TS','9S','8S','7S']]
         self.assertEqual (actual,expected)
    
 if __name__ == '__main__':

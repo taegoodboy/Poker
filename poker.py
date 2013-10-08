@@ -1,5 +1,5 @@
-FP = ['5S', '5H', '5D', '8C', '8S']
-SP = ['9S','9C','9D','9H','KS']
+FP = ['JC','TC','9C','8C','7C']
+SP = ['KS', 'QS', 'JS', 'TS', '9S']
 hands =[FP,SP]
 
 def poker(hands):
@@ -22,6 +22,18 @@ def poker(hands):
 
 def allmax(hands):
     winhand = max(hands, key=hand_rank)
+    # for StraightFlush that 
+    # same hand_rank 
+    if hand_rank(hands[0])==hand_rank(hands[1]):
+        # same high card
+        if hand_rank(hands[0])[1]==hand_rank(hands[1])[1]:
+            if hands[0][0][1]<hands[1][0][1]:
+                windhand = hands[1]
+                hands.pop(0)
+            else:
+                winhand = hands[0]
+                hands.pop(1)
+                
     maxval = hand_rank(winhand)
     return [hand for hand in hands if hand_rank(hand)==maxval]
     
