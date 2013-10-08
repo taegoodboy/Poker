@@ -64,6 +64,35 @@ class Testpoker(unittest.TestCase):
         actual = poker.poker ([sf,sf2])
         expected = [['JS', 'TS','9S','8S','7S']]
         self.assertEqual (actual,expected)
+
+### Function hand_rank
+
+    def test_hand_rank_tester_1(self):
+        '''testcase hand_rank high straight flush
+        sf = ['JS', 'TS', '9S', '8S', '7S']
+        '''
+        sf = ['JS', 'TS', '9S', '8S', '7S']
+        actual = poker.hand_rank(sf)[0]
+        expected = 8
+        self.assertEqual (actual,expected)
+
+    def test_hand_rank_tester_2(self):
+        '''testcase hand_rank low straight flush
+        sf = ['AC', '2C', '3C', '4C', '5C']
+        '''
+        sf = ['AC', '2C', '3C', '4C', '5C']
+        actual = poker.hand_rank(sf)[0]
+        expected = 8
+        self.assertEqual (actual,expected)
+
+    def test_hand_rank_tester_3(self):
+        '''testcase hand_rank low straight flush 
+        sf = ['2C','3C','4C','5C','6C']
+        '''
+        sf = ['2C','3C','4C','5C','6C']
+        actual = poker.hand_rank(sf)[0]
+        expected = 8
+        self.assertEqual (actual,expected)
    
 if __name__ == '__main__':
     unittest.main(exit=False)
