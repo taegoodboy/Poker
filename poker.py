@@ -1,6 +1,7 @@
 FP = ['5S', '3H', '9D', '8C', '8S']
 SP = ['5S', '5H', '9D', '8C', '8S']
-hands =[FP,SP]
+TP = ['JC', 'TC', '9C', '8C', '7C']
+hands =[FP,SP,TP]
 
 def poker(hands):
     """
@@ -25,6 +26,13 @@ def poker(hands):
     >>> hc = ['4S', '3H', '9D', '8C', 'TS']
     >>> poker([op, tp])
     [['5S', '5H', '9D', '8C', '8S']]
+    >>> poker([op, hc])
+    [['5S', '3H', '9D', '8C', '8S']]
+    >>> poker([op, hc, sf])
+    [['JC', 'TC', '9C', '8C', '7C']]
+    >>> poker([op])
+    [['5S', '3H', '9D', '8C', '8S']]
+    
    """
     return allmax(hands)
 
@@ -71,6 +79,18 @@ def hand_rank(hand):
     >>> s1 = ['JC', 'TC', '9C', '8S', '7C']
     >>> hand_rank(s1)
     (4, 11)
+    >>> tk = ['5S', '7H', '8D', '8C', '8S']
+    >>> hand_rank(tk)
+    (3, 8)
+    >>> tp = ['5S', '5H', '9D', '8C', '8S']
+    >>> hand_rank(tp)
+    (2, 8, 5, 9)
+    >>> op = ['5S', '3H', '9D', '8C', '8S']
+    >>> hand_rank(op)
+    (1, 8, [9, 8, 8, 5, 3])
+    >>> hc = ['4S', '3H', '9D', '8C', 'TS']
+    >>> hand_rank(hc)
+    (0, [10, 9, 8, 4, 3])
     """
     ranks = ['--23456789TJQKA'.index(r) for r,s in hand]
     ranks.sort(reverse=True)
