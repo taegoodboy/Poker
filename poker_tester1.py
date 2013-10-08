@@ -174,6 +174,24 @@ class Testpoker(unittest.TestCase):
         actual = poker.hand_rank(tp)[0]
         expected = 2
         self.assertEqual (actual,expected)
+
+    def test_hand_rank_tester_13(self):
+        '''testcase hand_rank normal One_pair
+        op = ['5S', '3H', '9D', '8C', '8S']
+        '''
+        op = ['5S', '3H', '9D', '8C', '8S']
+        actual = poker.hand_rank(op)[0]
+        expected = 1
+        self.assertEqual (actual,expected)
+
+    def test_hand_rank_tester_14(self):
+        '''testcase hand_rank normal High_card
+        hc = ['4S', '3H', '9D', '8C', 'TS']
+        '''
+        hc = ['4S', '3H', '9D', '8C', 'TS']
+        actual = poker.hand_rank(hc)[0]
+        expected = 0
+        self.assertEqual (actual,expected)
    
 if __name__ == '__main__':
     unittest.main(exit=False)
