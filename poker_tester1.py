@@ -140,7 +140,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_hand_rank_tester_9(self):
-        '''testcase hand_rank
+        '''testcase hand_rank normal flush
         fl = ['JC', '5C', '9C', '8C', '7C']
         '''
         fl = ['JC', '5C', '9C', '8C', '7C']
@@ -149,7 +149,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_hand_rank_tester_10(self):
-        '''testcase hand_rank
+        '''testcase hand_rank normal straight
         st = ['JC', 'TC', '9C', '8S', '7C']
         '''
         st = ['JC', 'TC', '9C', '8S', '7C']
