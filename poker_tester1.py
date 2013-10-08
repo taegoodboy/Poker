@@ -27,9 +27,12 @@ class Testpoker(unittest.TestCase):
         ''' 
         sf = ['AC', '2C', '3C', '4C', '5C']
         fk = ['5S', '5H', '5D', '5C', 'KS']
-        actual = poker.flush([sf,fk])
-        expected = False
-        self.assertEqual (actual,expected)
+        actual1 = poker.flush(sf)
+        actual2 = poker.flush(fk)
+        expected1 = True
+        expected2 = False
+        self.assertEqual (actual1,expected1)
+        self.assertEqual (actual2,expected2)
         
     def test_poker_tester_3(self):
         '''testcase poker3 normal
