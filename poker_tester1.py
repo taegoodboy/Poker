@@ -6,11 +6,11 @@ class Testpoker(unittest.TestCase):
     
     #kind of card ==> sf = straight flush > fk = four of a kind > fh = full house >
     #fl = flush > st = straight > tk = three of a kind > tp = two pair > op = one pair > hc = high card
-    #type of card ==> S = spear card > H = heart card > D = diamond card > C = clover card
+    #type of card ==> S = spades card > H = heart card > D = diamond card > C = club card
     #value of card ==> A = 14 > K = 13 > Q = 12 > J = 11 > T = 10 > 9...2 > A = 1
 
     def test_poker_tester_1(self):
-        '''testcase poker1 normal
+        '''testcase poker1 normal poker
         sf = ['JC', 'TC', '9C', '8C', '7C']
         fk = ['5S', '5H', '5D', '5C', 'KS']
         '''
@@ -21,7 +21,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
         
     def test_poker_tester_2(self):
-        '''testcase poker2 normal
+        '''testcase poker2 normal flush
         sf = ['AC', '2C', '3C', '4C', '5C']
         fk = ['5S', '5H', '5D', '5C', 'KS']
         ''' 
