@@ -1,6 +1,6 @@
 <h1>Poker Progam</h1>
-<h8><p><br>
-	Poker is a family of card games involving betting and individual play, </br>
+<h8><p>
+	Poker is a family of card games involving betting and individual play, 
 	whereby the winner is determined by the ranks and combinations of their cards, 
 	some of which remain hidden until the end of the game.
 	Poker games vary in the number of cards dealt,
