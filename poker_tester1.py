@@ -158,7 +158,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_hand_rank_tester_11(self):
-        '''testcase hand_rank normal Three_of_a_kind
+        '''testcase hand_rank normal three_of_a_kind
         tk = ['5S', '7H', '8D', '8C', '8S']
         '''
         tk = ['5S', '7H', '8D', '8C', '8S']
@@ -167,7 +167,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_hand_rank_tester_12(self):
-        '''testcase hand_rank normal Two_pair
+        '''testcase hand_rank normal two_pair
         tp = ['5S', '5H', '9D', '8C', '8S']
         '''
         tp = ['5S', '5H', '9D', '8C', '8S']
@@ -176,7 +176,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_hand_rank_tester_13(self):
-        '''testcase hand_rank normal One_pair
+        '''testcase hand_rank normal one_pair
         op = ['5S', '3H', '9D', '8C', '8S']
         '''
         op = ['5S', '3H', '9D', '8C', '8S']
@@ -185,14 +185,43 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_hand_rank_tester_14(self):
-        '''testcase hand_rank normal High_card
+        '''testcase hand_rank normal high_card
         hc = ['4S', '3H', '9D', '8C', 'TS']
         '''
         hc = ['4S', '3H', '9D', '8C', 'TS']
         actual = poker.hand_rank(hc)[0]
         expected = 0
         self.assertEqual (actual,expected)
-   
+        
+### Function straight_flush
+
+    def test_straight_flush_tester_1(self):
+        '''testcase lowest straight_flush
+        sf = ['AC','2C','3C','4C','5C']
+        '''
+        sf = ['AC','2C','3C','4C','5C']
+        actual = poker.straight_flush(sf)
+        expected = True
+        self.assertEqual (actual,expected)
+
+    def test_straight_flush_tester_2(self):
+        '''testcase normal straight_flush
+        sf = ['5H','6H','7H','8H','9H']
+        '''
+        sf = ['5H','6H','7H','8H','9H']
+        actual = poker.straight_flush(sf)
+        expected = True
+        self.assertEqual (actual,expected)
+
+    def test_straight_flush_tester_3(self):
+        '''testcase highest straight_flush
+        sf = ['AS','KS','QS','JS','TS']
+        '''
+        sf = ['AS','KS','QS','JS','TS']
+        actual = poker.straight_flush(sf)
+        expected = True
+        self.assertEqual (actual,expected)
+
 if __name__ == '__main__':
     unittest.main(exit=False)
 
