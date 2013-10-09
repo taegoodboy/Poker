@@ -1,4 +1,7 @@
-numberOfmember = input('Number of player: ')
+numberOfmember = input('Number of player(2-5): ')
+while numberOfmember>5 or numberOfmember<2:
+        numberOfmember = input('Number of player(2-5): ')
+        
 import random
     
 
@@ -16,6 +19,21 @@ hands=[]
 for i in xrange(numberOfmember):
     temp=[]
     hands.append(randomCard(temp))
+
+def checkhand(hands):
+    listcard=[]
+    n=0
+    for hand in hands:
+        for card in hand:
+            if card not in listcard:
+                listcard.append(card)
+                n+=1
+            else:
+                hands[n/5]=[]
+                randomCard(hands[n/5])
+                
+for i in xrange(1000):
+    checkhand(hands)
 
 
 def poker(hands):
