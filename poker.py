@@ -1,7 +1,22 @@
-FP = ['5S', '3H', '9D', '8C', '8S']
-SP = ['5S', '5H', '9D', '8C', '8S']
-TP = ['JC', 'TC', '9C', '8C', '7C']
-hands =[FP,SP,TP]
+numberOfmember = input('Number of player: ')
+import random
+    
+
+##FP = ['5S', '3H', '9D', '8C', '8S']
+##SP = ['5S', '5H', '9D', '8C', '8S']
+##TP = ['JC', 'TC', '9C', '8C', '7C']
+##hands =[FP,SP,TP]
+
+def randomCard(x):
+	while len(x)<5:
+		x.append(''+random.choice(['2','3','4','5','6','7','8','9','T','J','Q','K'])+random.choice(['C','D','H','S']))
+	return x
+
+hands=[]
+for i in xrange(numberOfmember):
+    temp=[]
+    hands.append(randomCard(temp))
+
 
 def poker(hands):
     """
@@ -34,6 +49,7 @@ def poker(hands):
     [['5S', '3H', '9D', '8C', '8S']]
     
    """
+    
     return allmax(hands)
 
 def allmax(hands):
@@ -241,6 +257,11 @@ def twopair(ranks):
         return (high_pair, low_pair)
     return ()
 
+
+n=1
+for i in hands:
+    print 'Player'+str(n)+str(i)
+    n+=1
 print poker(hands)
 
 
