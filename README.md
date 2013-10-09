@@ -13,6 +13,10 @@
 	These hands are compared using a hand ranking system that is standard across all variants of poker,
 	the player with the highest-ranking hand winning that particular deal in most variants of poker.
 	In some variants, the lowest-ranking hand can win or tie.</p>
-<h5>Straight Flush</h5><p>
+<ul>
+<li><h5>Straight Flush</h5></li><p>
 	A straight flush is a hand that contains five cards in sequence, all of the same suit</p>
-	
+<li><h5>Royal flush</h5></li></p>
+	An ace-high straight flush such as A K Q J 10 in the same suit is known as a royal flush, and is the highest-ranking standard poker hand.</p>
+
+</ul>
