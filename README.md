@@ -7,12 +7,12 @@
 	the number of shared or "community" cards and the number of cards that remain hidden.
 	The betting procedures vary among different poker games in such ways as betting
 	limits and splitting the pot between a high hand and a low hand.</p></h8>
-<h3>List of poker hands</h3>
-	<p>In poker, players construct hands of five cards according to predetermined rules,
+<h3>List of poker hands</h3><p>
+	In poker, players construct hands of five cards according to predetermined rules,
 	which vary according to which variant of poker is being played.
 	These hands are compared using a hand ranking system that is standard across all variants of poker,
 	the player with the highest-ranking hand winning that particular deal in most variants of poker.
 	In some variants, the lowest-ranking hand can win or tie.</p>
-<h6>Straight Flush</h6>
-	<p>A straight flush is a hand that contains five cards in sequence, all of the same suit</p>
+<h5>Straight Flush</h5><p>
+	A straight flush is a hand that contains five cards in sequence, all of the same suit</p>
 	
