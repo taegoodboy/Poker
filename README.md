@@ -13,10 +13,14 @@
 	These hands are compared using a hand ranking system that is standard across all variants of poker,
 	the player with the highest-ranking hand winning that particular deal in most variants of poker.
 	In some variants, the lowest-ranking hand can win or tie.</p>
+<p>
+	The following rules apply to the ranking of all poker hands. Under typical rules there are nine distinct rankings.</p>
 <ul>
 <li><h5>Straight Flush</h5></li><p>
 	A straight flush is a hand that contains five cards in sequence, all of the same suit</p>
-<li><h5>Royal flush</h5></li></p>
-	An ace-high straight flush such as A K Q J 10 in the same suit is known as a royal flush, and is the highest-ranking standard poker hand.</p>
-
+<li><h5>Four of a kind</h5></li><p>
+	Four of a kind, also known as quads, that contains all four cards of one rank and any other (unmatched) card. Quads with higher-ranking cards defeat lower-ranking ones.</p>
+<li><h5>Full house</h5></li><p>
+	A full house, also known as a full boat,that contains three matching cards of one rank and two matching cards of another rank.
+	 Between two full houses, the one with the higher-ranking three cards wins,</p>
 </ul>
