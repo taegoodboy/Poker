@@ -17,7 +17,7 @@
 	The following rules apply to the ranking of all poker hands. Under typical rules there are nine distinct rankings.</p>
 <ul>
 <li><h5>Straight Flush</h5></li><p>
-	A straight flush is a hand that contains five cards in sequence, all of the same suit</p>
+	A straight flush is a hand that contains five cards in sequence, all of the same suit.</p>
 <li><h5>Four of a kind</h5></li><p>
 	Four of a kind, also known as quads, that contains all four cards of one rank and any other (unmatched) card. Quads with higher-ranking cards defeat lower-ranking ones.</p>
 <li><h5>Full house</h5></li><p>
