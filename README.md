@@ -8,5 +8,5 @@ the number of shared or "community" cards and the number of cards that remain hi
 The betting procedures vary among different poker games in such ways as betting
 limits and splitting the pot between a high hand and a low hand.</p></h8>
 <h3>List of poker hands</h3>
-<img src="/path/to/img.jpg" alt="Alt text" />
+<img src="http://upload.wikimedia.org/wikipedia/commons/b/b7/Playing_card_club_J.svg" alt="Alt text" />
 
