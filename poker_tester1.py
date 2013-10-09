@@ -222,6 +222,35 @@ class Testpoker(unittest.TestCase):
         expected = True
         self.assertEqual (actual,expected)
 
+### Function straight
+
+    def test_straight_tester_1(self):
+        '''testcase high straight
+        st = ['AC','KD','QH','JS','TS']
+        '''
+        st = ['AC','KD','QH','JS','TS']
+        actual = poker.straight(st)
+        expected = True
+        self.assertEqual (actual,expected)
+
+    def test_straight_tester_2(self):
+        '''testcase normal straight_flush
+        sf = ['5H','6H','7H','8H','9H']
+        '''
+        sf = ['5H','6H','7H','8H','9H']
+        actual = poker.straight(sf)
+        expected = True
+        self.assertEqual (actual,expected)
+
+    def test_straight_tester_3(self):
+        '''testcase normal flush
+        fl = ['4H','6H','7H','8H','9H']
+        '''
+        fl = ['4H','6H','7H','8H','9H']
+        actual = poker.straight(fl)
+        expected = False
+        self.assertEqual (actual,expected)
+
 if __name__ == '__main__':
     unittest.main(exit=False)
 
