@@ -130,12 +130,6 @@ def straight_flush(hand):
     Return True if hand is straight_flush,
     False otherwise
 
-    >>> sf = ['JC', 'TC', '9C', '8C', '7C']
-    >>> straight_flush(sf)
-    True
-    >>> fk = ['7S', '5H', '5D', '5C', '5S']
-    >>> straight_flush(fk)
-    False
     """
     return straight(hand) and flush(hand)
 
@@ -145,13 +139,6 @@ def straight(hand):
 
     Return True if hand is straight,
     False otherwise
-
-    >>> sf = ['JC', 'TC', '9C', '8C', '7C']
-    >>> straight(sf)
-    True
-    >>> fk = ['4S','4D','4C','4H','AD']
-    >>> straight (fk)
-    False
     """
     ranks = ['--23456789TJQKA'.index(r) for r,s in hand]
     ranks.sort(reverse=True)
@@ -164,13 +151,6 @@ def flush(hand):
     (hand)-> Bool
 
     Return True if hand is flush, False otherwise.
-
-    >>> sf = ['JC', 'TC', '9C', '8C', '7C']
-    >>> flush(sf)
-    True
-    >>> fk = ['5S', '5H', '5D', '5C', 'KS']
-    >>> flush(fk)
-    False
     """
 
     suits = [s for r,s in hand]
@@ -183,19 +163,6 @@ def kind(n, ranks):
 
     Return rank if hand is n kind,
     false otherwise
-
-    >>> sf_ranks = [11, 10, 9, 8, 7]
-    >>> kind(4, sf_ranks)
-    0
-    >>> fk_ranks = [5, 5, 5, 5, 13]
-    >>> kind(4, fk_ranks)
-    5
-    >>> fh_ranks = [5, 5, 5, 8, 8]
-    >>> kind(3, fh_ranks)
-    5
-    >>> op_ranks = [5, 3, 9, 8, 8]
-    >>> kind(2, op_ranks)
-    8
     """
     
     for r in ranks:
@@ -209,16 +176,6 @@ def fullhouse(ranks):
 
     Return True if hand is fullhouse,
     false otherwise
-
-    >>> sf_ranks = [11, 10, 9, 8, 7]
-    >>> fullhouse(sf_ranks)
-    False
-    >>> fk_ranks = [5, 5, 5, 5, 13]
-    >>> fullhouse(fk_ranks)
-    False
-    >>> fh_ranks = [5, 5, 5, 8, 8]
-    >>> fullhouse(fh_ranks)
-    True
     """
     
     return True if kind(3, ranks) and kind(2, ranks) else False
@@ -229,13 +186,6 @@ def twopair(ranks):
 
     Return tuple of highpair and lowpair if hand is twopair,
     false otherwise
-
-    >>> sf_ranks = [11, 10, 9, 8, 7]
-    >>> twopair(sf_ranks)
-    ()
-    >>> tp_ranks = [5, 5, 9, 8, 8]
-    >>> twopair(tp_ranks)
-    (8, 5)
     """
     ranks.sort(reverse=True)
     high_pair = kind(2, ranks)
