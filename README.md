@@ -43,5 +43,11 @@
 	One pair is a poker hand that contains two cards of one rank, plus three cards which are not of this rank nor the same as each other.
 	Higher-ranking pairs defeat lower-ranking pairs; if two hands have the same pair,
 	the non-paired cards are compared in descending order to determine the winner.</p>
+<li><h5>High card</h5></li><p>
+	A high-card or no-pair hand is a poker hand made of any five cards not meeting any of the above requirements.
+	Essentially, no hand is made, and the only thing of any potential meaning in the hand is the highest card.
+	Nevertheless, they sometimes win a pot if the other players fold or even at a showdown.
+	Two high-card hands are ranked by comparing the highest-ranking card. If those are equal,
+	then the next highest-ranking card from each hand is compared, and so on until a difference is found.</p>
 
 </ul>
