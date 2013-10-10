@@ -19,8 +19,14 @@
 <li><h5>Straight Flush</h5></li><p>
 	A straight flush is a hand that contains five cards in sequence, all of the same suit.</p>
 <li><h5>Four of a kind</h5></li><p>
-	Four of a kind, also known as quads, that contains all four cards of one rank and any other (unmatched) card. Quads with higher-ranking cards defeat lower-ranking ones.</p>
+	Four of a kind, also known as quads, that contains all four cards of one rank and any other (unmatched) card.
+	Quads with higher-ranking cards defeat lower-ranking ones.</p>
 <li><h5>Full house</h5></li><p>
 	A full house, also known as a full boat,that contains three matching cards of one rank and two matching cards of another rank.
 	 Between two full houses, the one with the higher-ranking three cards wins.</p>
+<li><h5>Flush</h5></li><p>	
+	A flush is a poker hand where all five cards are of the same suit, but not in sequence.
+	Two flushes are compared as if they were high card hands;
+	the highest-ranking card of each is compared to determine the winner.</p>
+
 </ul>
