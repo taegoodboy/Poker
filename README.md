@@ -32,5 +32,8 @@
 	A straight is a poker hand that contains five cards of sequential rank in at least two different suits.
 	Two straights are ranked by comparing the highest card of each.
 	Two straights with the same high card are of equal value, suits are not used to separate them.</p>
+<li><h5>Three of a kind</h5></li><p>
+	Three of a kind, also called trips or a set, is a poker hand that contains three cards of the same rank,
+	plus two cards which are not of this rank nor the same as each other.</p>
 
 </ul>
