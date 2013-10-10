@@ -189,8 +189,13 @@ def check_state_of_winner(hand):
     elif hand_rank(winnerhand[0])[0]==0:
         return "Win by HighCard"
     
-def operation(hands):    
+def operation(hands):
+    """
+    ([hand,hand,...])-> Result of program
 
+    Return result of program
+    """
+     
     for i in xrange(numberOfmember):
         temp=[]
         hands.append(randomCard(temp))
@@ -204,9 +209,11 @@ def operation(hands):
         print 'Player '+str(n)+": "+str(i)
         n+=1
     print "Winner is who has card : "+str(poker(hands))
+    
     for x in xrange(len(tmphands)):
         if tmphands[x] == poker(hands)[0]:
             print "The winner is Player : "+ str(x+1)
+            
     print check_state_of_winner(poker(hands))
     
     
