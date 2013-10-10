@@ -4,10 +4,13 @@ import poker
 class Testpoker(unittest.TestCase):
     '''Example unittest test method for poker'''
     
-    #type of card ==> sf = straight flush > fk = four of a kind > fh = full house >
-    #fl = flush > st = straight > tk = three of a kind > tp = two pair > op = one pair > hc = high card
-    #kind of card ==> S = spades card > H = heart card > D = diamond card > C = club card
-    #value of card ==> A = 14 > K = 13 > Q = 12 > J = 11 > T = 10 > 9...2 > A = 1
+    '''
+        type of card ==> sf = straight flush > fk = four of a kind > fh = full house >
+                         fl = flush > st = straight > tk = three of a kind > tp = two pair >
+                         op = one pair > hc = high card
+        kind of card ==> S = spades card > H = heart card > D = diamond card > C = club card
+        value of card ==> A = 14 > K = 13 > Q = 12 > J = 11 > T = 10 > 9 > 8 > 7 > 6 > 5 > 4 > 3 > 2 > A = 1
+    '''
 
     def test_poker_tester_1(self):
         '''testcase poker1 normal poker
@@ -35,7 +38,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual2,expected2)
         
     def test_poker_tester_3(self):
-        '''testcase poker3 normal
+        '''testcase poker3 normal poker
         sf = ['2C','3C','4C','5C','6C']
         fk = ['9S','9C','9D','9H','KS']
         '''
@@ -46,7 +49,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_poker_straight(self):
-        '''testcase poker normal
+        '''testcase poker normal poker
         sf = ['JC','TC','9C','8C','7C']
         fk = ['4S','4D','4C','4H','AD']
         '''
@@ -65,10 +68,10 @@ class Testpoker(unittest.TestCase):
         expected = [['JS', 'TS','9S','8S','7S']]
         self.assertEqual (actual,expected)
 
-### Function hand_rank
+### Test Function hand_rank
 
     def test_hand_rank_tester_1(self):
-        '''testcase hand_rank high straight flush
+        '''testcase hand_rank high straight_flush
         sf = ['JS', 'TS', '9S', '8S', '7S']
         '''
         sf = ['JS', 'TS', '9S', '8S', '7S']
@@ -77,7 +80,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_hand_rank_tester_2(self):
-        '''testcase hand_rank low straight flush
+        '''testcase hand_rank lowest straight_flush
         sf = ['AC', '2C', '3C', '4C', '5C']
         '''
         sf = ['AC', '2C', '3C', '4C', '5C']
@@ -86,7 +89,7 @@ class Testpoker(unittest.TestCase):
         self.assertEqual (actual,expected)
 
     def test_hand_rank_tester_3(self):
-        '''testcase hand_rank low straight flush 
+        '''testcase hand_rank low straight_flush 
         sf = ['2C','3C','4C','5C','6C']
         '''
         sf = ['2C','3C','4C','5C','6C']
@@ -193,7 +196,7 @@ class Testpoker(unittest.TestCase):
         expected = 0
         self.assertEqual (actual,expected)
         
-### Function straight_flush
+### Test Function straight_flush
 
     def test_straight_flush_tester_1(self):
         '''testcase lowest straight_flush
@@ -222,7 +225,7 @@ class Testpoker(unittest.TestCase):
         expected = True
         self.assertEqual (actual,expected)
 
-### Function straight
+### Test Function straight
 
     def test_straight_tester_1(self):
         '''testcase high straight
@@ -251,7 +254,7 @@ class Testpoker(unittest.TestCase):
         expected = False
         self.assertEqual (actual,expected)
 
-### Function flush
+### Test Function flush
 
     def test_flush_tester_1(self):
         '''testcase normal flush
@@ -280,7 +283,7 @@ class Testpoker(unittest.TestCase):
         expected = False
         self.assertEqual (actual,expected)
 
-### Function kind
+### Test Function kind
     def test_kind_tester_1(self):
         '''testcase normal four_of_a_kind
         fk_ranks = [5, 5, 5, 5, 13]
@@ -306,7 +309,7 @@ class Testpoker(unittest.TestCase):
         expected = 0
         self.assertEqual (actual,expected)
 
-### Function full_house
+### Test Function full_house
     def test_full_house_tester_1(self):
         '''testcase normal straight_flush
         sf_ranks = [11, 10, 9, 8, 7]
@@ -334,7 +337,7 @@ class Testpoker(unittest.TestCase):
         expected = True
         self.assertEqual (actual,expected)
 
-### Function two_pair
+### Test Function two_pair
     def test_two_pair_tester_1(self):
         '''testcase high straight
         st_ranks = [11, 10, 9, 8, 7]
@@ -416,7 +419,7 @@ class Testpoker(unittest.TestCase):
 
 ###Test Function check_state_of_winner
     def test_check_winner1(self):
-        '''testcase check type card of winner 
+        '''testcase check type card of winner in Three of a kinds
         Pl1=['TH', '2H', '5H', 'QC', '2S']
         Pl2=['3D', '9S', '9H', '6C', '9C']
         Winner is who has card : ['3D', '9S', '9H', '6C', '9C']
@@ -428,11 +431,11 @@ class Testpoker(unittest.TestCase):
         expected = True
         self.assertEqual (actual,expected)
     def test_check_winner2(self):
-        '''testcase check type card of winner 
+        '''testcase check type card of winner in One pairs
         Pl1=['TH', '2H', '5H', 'QC', '2S']
         Pl2=['3D', '9S', 'AH', '6C', '9C']
         Winner is who has card : ['3D', '9S', 'AH', '6C', '9C']
-        Win by One pairs
+        "Win by One pairs"
         '''
         Pl1=['TH', '2H', '5H', 'QC', '2S']
         Pl2=['3D', '9S', 'AH', '6C', '9C']
