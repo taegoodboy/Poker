@@ -9,8 +9,8 @@
 	limits and splitting the pot between a high hand and a low hand.</p></h8>
 <h3>How to play</h3><p>
 <ol>
-<li>Input number of players between two to five players</li>
-<li>Program will distribute random card to all players, five cards per players</li>
+<li>Input number of players between two to five players.</li>
+<li>Program will distribute random card to all players, five cards per players.</li>
 <li>Program will calculate to find the winner and show the winner's rank of cards results.</li>
 </ol>
 
