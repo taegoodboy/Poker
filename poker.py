@@ -166,6 +166,33 @@ def twopair(ranks):
         return (high_pair, low_pair)
     return ()
 
+def check_state_of_winner(hand):
+    """
+    (hand)-> str
+
+    Return rank of Winner card
+    """
+    winnerhand = hands
+    if hand_rank(winnerhand[0])[0]==8:
+        return "Win by StraightFlush"
+    elif hand_rank(winnerhand[0])[0]==7:
+        return "Win by Four of a kinds"
+    elif hand_rank(winnerhand[0])[0]==6:
+        return "Win by FullHouse"
+    elif hand_rank(winnerhand[0])[0]==5:
+        return "Win by Flush"
+    elif hand_rank(winnerhand[0])[0]==4:
+        return "Win by Straight"
+    elif hand_rank(winnerhand[0])[0]==3:
+        return "Win by Three of a kinds"
+    elif hand_rank(winnerhand[0])[0]==2:
+        return "Win by Two pairs"
+    elif hand_rank(winnerhand[0])[0]==1:
+        return "Win by One pairs"
+    else:
+        return "Win by HighCard"
+    
+
 ##operation
 hands=[]
 for i in xrange(numberOfmember):
@@ -179,6 +206,7 @@ n=1
 for i in hands:
     print 'Player'+str(n)+str(i)
     n+=1
-print poker(hands)
+print "Winner is who has card : "+str(poker(hands))
+print check_state_of_winner(poker(hands))
 
 
