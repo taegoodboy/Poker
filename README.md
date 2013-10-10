@@ -39,5 +39,9 @@
 	A poker hand that contains two cards of the same rank, plus two cards of another rank (that match each other but not the first pair),
 	plus any card not of either rank, is called two pair. To rank two hands both containing two pair,
 	the higher-ranking pair of each is first compared, and the higher pair wins.</p>
+<li><h5>One pair</h5></li><p>
+	One pair is a poker hand that contains two cards of one rank, plus three cards which are not of this rank nor the same as each other.
+	Higher-ranking pairs defeat lower-ranking pairs; if two hands have the same pair,
+	the non-paired cards are compared in descending order to determine the winner.</p>
 
 </ul>
