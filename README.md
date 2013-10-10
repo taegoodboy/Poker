@@ -11,7 +11,8 @@
 <ol>
 <li>Input number of players between two to five players</li>
 <li>Program will distribute random card to all players, five cards per players</li>
-<li>Program will calculate to find the winner and show the winner's rank of cards results.<
+<li>Program will calculate to find the winner and show the winner's rank of cards results.</li>
+</ol>
 
 <h3>List of poker hands</h3><p>
 	In poker, players construct hands of five cards according to predetermined rules,
