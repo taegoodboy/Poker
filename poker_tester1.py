@@ -4,9 +4,9 @@ import poker
 class Testpoker(unittest.TestCase):
     '''Example unittest test method for poker'''
     
-    #kind of card ==> sf = straight flush > fk = four of a kind > fh = full house >
+    #type of card ==> sf = straight flush > fk = four of a kind > fh = full house >
     #fl = flush > st = straight > tk = three of a kind > tp = two pair > op = one pair > hc = high card
-    #type of card ==> S = spades card > H = heart card > D = diamond card > C = club card
+    #kind of card ==> S = spades card > H = heart card > D = diamond card > C = club card
     #value of card ==> A = 14 > K = 13 > Q = 12 > J = 11 > T = 10 > 9...2 > A = 1
 
     def test_poker_tester_1(self):
@@ -360,7 +360,7 @@ class Testpoker(unittest.TestCase):
         expected = (8,5)
         self.assertEqual (actual,expected)
 
-### Function one_pair
+### Test one_pair
     def test_one_pair_tester_1(self):
         '''testcase normal one_pair
         op = [5,3,9,7,5]
@@ -377,7 +377,29 @@ class Testpoker(unittest.TestCase):
         actual = poker.kind(2,hc)
         expected = 0
         self.assertEqual (actual,expected)
+
+### Test high_card
+    def test_high_card_tester_1(self):
+        '''testcase high_card same number but different kind
+        hc1 = ['2C', '5C', 'KC', '8D', '7S']
+        hc2 = ['5S', '2H', '7D', '9C', 'KS']
+        '''
+        hc1 = ['2C', '5C', 'KC', '8D', '7S']
+        hc2 = ['5S', '2H', '7D', '9C', 'KS']
+        actual = poker.poker([hc1,hc2])
+        expected = [['5S', '2H', '7D', '9C', 'KS']]
+        self.assertEqual (actual,expected)
+    def test_high_card_tester_2(self):
+        '''testcase high_card same kind but different number
+        hc1 = ['2C', '5C', 'KC', '8D', '7S']
+        hc2 = ['5S', '2H', '7D', 'AC', '3S']
+        '''
+        hc1 = ['2C', '5C', 'KC', '8D', '7S']
+        hc2 = ['5S', '2H', '7D', 'AC', '3S']
+        actual = poker.poker([hc1,hc2])
+        expected = [['5S', '2H', '7D', 'AC', '3S']]
+        self.assertEqual (actual,expected)
         
-if __name__ == '__main__':
+if __name__ == '__main__':                       
     unittest.main(exit=False)
 
