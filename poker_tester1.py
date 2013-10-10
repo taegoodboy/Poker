@@ -305,7 +305,35 @@ class Testpoker(unittest.TestCase):
         actual = poker.kind(2,st_ranks)
         expected = 0
         self.assertEqual (actual,expected)
-                
+
+### Function full_house
+    def test_full_house_tester_1(self):
+        '''testcase normal straight_flush
+        sf_ranks = [11, 10, 9, 8, 7]
+        '''
+        sf_ranks = [11, 10, 9, 8, 7]
+        actual = poker.fullhouse(sf_ranks)
+        expected = False
+        self.assertEqual (actual,expected)
+
+    def test_full_house_tester_2(self):
+        '''testcase normal four_of_a_kind
+        fk_ranks = [5, 5, 5, 5, 13]
+        '''
+        fk_ranks = [5, 5, 5, 5, 13]
+        actual = poker.fullhouse(fk_ranks)
+        expected = False
+        self.assertEqual (actual,expected)
+
+    def test_full_house_tester_3(self):
+        '''testcase normal full_house
+        fh_ranks = [5, 5, 5, 8, 8]
+        '''
+        fh_ranks = [5, 5, 5, 8, 8]
+        actual = poker.fullhouse(fh_ranks)
+        expected = True
+        self.assertEqual (actual,expected)
+
 if __name__ == '__main__':
     unittest.main(exit=False)
 
