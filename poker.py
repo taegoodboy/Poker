@@ -1,7 +1,3 @@
-numberOfmember = input('Number of player(2-5): ')
-while numberOfmember>5 or numberOfmember<2:
-    numberOfmember = input('Number of player(2-5): ')
-        
 import random    
 
 def randomCard(x):
@@ -193,23 +189,30 @@ def check_state_of_winner(hand):
     elif hand_rank(winnerhand[0])[0]==0:
         return "Win by HighCard"
     
+def operation(hands):    
+
+    for i in xrange(numberOfmember):
+        temp=[]
+        hands.append(randomCard(temp))
+
+    for i in xrange(1000):
+        checkhand(hands)
+
+    n=1
+    for i in hands:
+        print 'Player '+str(n)+": "+str(i)
+        n+=1
+    print "Winner is who has card : "+str(poker(hands))
+    print check_state_of_winner(poker(hands))
+    print ""
+    
     
 
-##operation
+numberOfmember = input('Number of player(2-5): ')
+while numberOfmember>5 or numberOfmember<2:
+    numberOfmember = input('Number of player(2-5): ')
 hands=[]
-for i in xrange(numberOfmember):
-    temp=[]
-    hands.append(randomCard(temp))
-
-for i in xrange(1000):
-    checkhand(hands)
-
-n=1
-for i in hands:
-    print 'Player: '+str(n)+" "+str(i)
-    n+=1
-print "Winner is who has card : "+str(poker(hands))
-print check_state_of_winner(poker(hands))
+operation(hands)
 
 
 
