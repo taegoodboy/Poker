@@ -399,7 +399,47 @@ class Testpoker(unittest.TestCase):
         actual = poker.poker([hc1,hc2])
         expected = [['5S', '2H', '7D', 'AC', '3S']]
         self.assertEqual (actual,expected)
-        
+
+### Test Function operation
+    def test_operation(self):
+        '''testcase operation for check the winner 
+        Pl1=['TH', '2H', '5H', 'QC', '2S']
+        Pl2=['3D', '9S', 'KH', '6C', '9C']
+        Winner is who has card : ['3D', '9S', 'KH', '6C', '9C']
+        The winner is Player : 2
+        '''
+        Pl1=['TH', '2H', '5H', 'QC', '2S']
+        Pl2=['3D', '9S', 'KH', '6C', '9C']
+        actual = poker.poker([Pl1,Pl2])
+        expected = [['3D', '9S', 'KH', '6C', '9C']]
+        self.assertEqual (actual,expected)
+
+###Test Function check_state_of_winner
+    def test_check_winner1(self):
+        '''testcase check type card of winner 
+        Pl1=['TH', '2H', '5H', 'QC', '2S']
+        Pl2=['3D', '9S', '9H', '6C', '9C']
+        Winner is who has card : ['3D', '9S', '9H', '6C', '9C']
+        "Win by Three of a kinds"
+        '''
+        Pl1=['TH', '2H', '5H', 'QC', '2S']
+        Pl2=['3D', '9S', '9H', '6C', '9C']
+        actual = (poker.hand_rank(poker.poker([Pl1,Pl2])[0])[0]==3)
+        expected = True
+        self.assertEqual (actual,expected)
+    def test_check_winner2(self):
+        '''testcase check type card of winner 
+        Pl1=['TH', '2H', '5H', 'QC', '2S']
+        Pl2=['3D', '9S', 'AH', '6C', '9C']
+        Winner is who has card : ['3D', '9S', 'AH', '6C', '9C']
+        Win by One pairs
+        '''
+        Pl1=['TH', '2H', '5H', 'QC', '2S']
+        Pl2=['3D', '9S', 'AH', '6C', '9C']
+        actual = (poker.hand_rank(poker.poker([Pl1,Pl2])[0])[0]==3)
+        expected = False
+        self.assertEqual (actual,expected)
+
 if __name__ == '__main__':                       
     unittest.main(exit=False)
 
