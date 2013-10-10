@@ -334,6 +334,32 @@ class Testpoker(unittest.TestCase):
         expected = True
         self.assertEqual (actual,expected)
 
+### Function two_pair
+    def test_two_pair_tester_1(self):
+        '''testcase high straight
+        st_ranks = [11, 10, 9, 8, 7]
+        '''
+        st_ranks = [11, 10, 9, 8, 7]
+        actual = poker.twopair(st_ranks)
+        expected = ()
+        self.assertEqual (actual,expected)
+    def test_two_pair_tester_2(self):
+        '''testcase normal one_pair
+        op_ranks = [4,3,7,3,6]
+        '''
+        op_ranks = [4,3,7,3,6]
+        actual = poker.twopair(op_ranks)
+        expected = ()
+        self.assertEqual (actual,expected)
+    def test_two_pair_tester_3(self):
+        '''testcase normal two_pair
+        tp_ranks = [5, 5, 9, 8, 8]
+        '''
+        tp_ranks = [5, 5, 9, 8, 8]
+        actual = poker.twopair(tp_ranks)
+        expected = (8,5)
+        self.assertEqual (actual,expected)
+
 if __name__ == '__main__':
     unittest.main(exit=False)
 
