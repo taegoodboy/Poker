@@ -28,5 +28,9 @@
 	A flush is a poker hand where all five cards are of the same suit, but not in sequence.
 	Two flushes are compared as if they were high card hands;
 	the highest-ranking card of each is compared to determine the winner.</p>
+<li><h5>Straight</h5></li><p>
+	A straight is a poker hand that contains five cards of sequential rank in at least two different suits.
+	Two straights are ranked by comparing the highest card of each.
+	Two straights with the same high card are of equal value, suits are not used to separate them.</p>
 
 </ul>
