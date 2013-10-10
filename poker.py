@@ -4,11 +4,6 @@ while numberOfmember>5 or numberOfmember<2:
         
 import random    
 
-##FP = ['5S', '3H', '9D', '8C', '8S']
-##SP = ['5S', '5H', '9D', '8C', '8S']
-##TP = ['JC', 'TC', '9C', '8C', '7C']
-##hands =[FP,SP,TP]
-
 def randomCard(x):
     """
     ([hand, hand, ...])-> hands
@@ -18,10 +13,6 @@ def randomCard(x):
         x.append(''+random.choice(['2','3','4','5','6','7','8','9','T','J','Q','K'])+random.choice(['C','D','H','S']))
     return x
 
-hands=[]
-for i in xrange(numberOfmember):
-    temp=[]
-    hands.append(randomCard(temp))
 
 def checkhand(hands):
     """
@@ -38,26 +29,6 @@ def checkhand(hands):
             else:
                 hands[n/5]=[]
                 randomCard(hands[n/5])
-                
-for i in xrange(1000):
-    checkhand(hands)
-
-def allmax(hands):
-    winhand = max(hands, key=hand_rank)
-    # for StraightFlush that 
-    # same hand_rank
-    if hand_rank(hands[0])==hand_rank(hands[1]):
-        # same high card
-        if hand_rank(hands[0])[1]==hand_rank(hands[1])[1]:
-            if hands[0][0][1]<hands[1][0][1]:
-                windhand = hands[1]
-                hands.pop(0)
-            else:
-                winhand = hands[0]
-                hands.pop(1)
-                
-    maxval = hand_rank(winhand)
-    return [hand for hand in hands if hand_rank(hand)==maxval]
 
 def poker(hands):
     """
@@ -68,6 +39,11 @@ def poker(hands):
     return allmax(hands)
 
 def allmax(hands):
+    """
+    ([hand, hand, ...])-> hands
+
+    Return winner hand
+    """
     winhand = max(hands, key=hand_rank)
     # for StraightFlush that 
     # same hand_rank
@@ -83,12 +59,6 @@ def allmax(hands):
                 
     maxval = hand_rank(winhand)
     return [hand for hand in hands if hand_rank(hand)==maxval]
-    
-##    result = []
-##    for hand in hands:
-##        if hand_rank(hand) == maxval:
-##            result.append(hand)
-##    return result
 
 def hand_rank(hand):
     """
@@ -196,6 +166,14 @@ def twopair(ranks):
         return (high_pair, low_pair)
     return ()
 
+##operation
+hands=[]
+for i in xrange(numberOfmember):
+    temp=[]
+    hands.append(randomCard(temp))
+
+for i in xrange(1000):
+    checkhand(hands)
 
 n=1
 for i in hands:
