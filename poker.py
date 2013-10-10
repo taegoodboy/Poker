@@ -88,6 +88,7 @@ def hand_rank(hand):
     elif twopair(ranks):
         return 2, twopair(ranks)[0], twopair(ranks)[1], kind(1, ranks)
     elif kind(2, ranks):
+        
         return 1, kind(2, ranks), ranks
     else:
         return 0, ranks
@@ -172,7 +173,7 @@ def check_state_of_winner(hand):
 
     Return rank of Winner card
     """
-    winnerhand = hands
+    winnerhand = poker(hands)
     if hand_rank(winnerhand[0])[0]==8:
         return "Win by StraightFlush"
     elif hand_rank(winnerhand[0])[0]==7:
@@ -189,8 +190,9 @@ def check_state_of_winner(hand):
         return "Win by Two pairs"
     elif hand_rank(winnerhand[0])[0]==1:
         return "Win by One pairs"
-    else:
+    elif hand_rank(winnerhand[0])[0]==0:
         return "Win by HighCard"
+    
     
 
 ##operation
@@ -204,9 +206,10 @@ for i in xrange(1000):
 
 n=1
 for i in hands:
-    print 'Player'+str(n)+str(i)
+    print 'Player: '+str(n)+" "+str(i)
     n+=1
 print "Winner is who has card : "+str(poker(hands))
 print check_state_of_winner(poker(hands))
+
 
 
