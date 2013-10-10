@@ -35,5 +35,9 @@
 <li><h5>Three of a kind</h5></li><p>
 	Three of a kind, also called trips or a set, is a poker hand that contains three cards of the same rank,
 	plus two cards which are not of this rank nor the same as each other.</p>
+<li><h5>Two pair</h5></li><p>
+	A poker hand that contains two cards of the same rank, plus two cards of another rank (that match each other but not the first pair),
+	plus any card not of either rank, is called two pair. To rank two hands both containing two pair,
+	the higher-ranking pair of each is first compared, and the higher pair wins.</p>
 
 </ul>
