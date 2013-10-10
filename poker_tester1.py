@@ -360,6 +360,24 @@ class Testpoker(unittest.TestCase):
         expected = (8,5)
         self.assertEqual (actual,expected)
 
+### Function one_pair
+    def test_one_pair_tester_1(self):
+        '''testcase normal one_pair
+        op = [5,3,9,7,5]
+        '''
+        op = [5,3,9,7,5]
+        actual = poker.kind(2,op)
+        expected = 5
+        self.assertEqual (actual,expected)
+    def test_one_pair_tester_2(self):   
+        '''testcase normal high_card
+        hc = [3,4,8,2,9]
+        '''
+        hc = [3,4,8,2,9]
+        actual = poker.kind(2,hc)
+        expected = 0
+        self.assertEqual (actual,expected)
+        
 if __name__ == '__main__':
     unittest.main(exit=False)
 
