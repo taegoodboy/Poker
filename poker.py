@@ -198,13 +198,16 @@ def operation(hands):
     for i in xrange(1000):
         checkhand(hands)
 
+    tmphands = hands
     n=1
     for i in hands:
         print 'Player '+str(n)+": "+str(i)
         n+=1
     print "Winner is who has card : "+str(poker(hands))
+    for x in xrange(len(tmphands)):
+        if tmphands[x] == poker(hands)[0]:
+            print "The winner is Player : "+ str(x+1)
     print check_state_of_winner(poker(hands))
-    print ""
     
     
 
